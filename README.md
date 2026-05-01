@@ -14,15 +14,25 @@
 Склонируйте репозиторий и перейдите в папку проекта
 Активируйте виртуальное окружение
 Примените миграции:
+
+```bach
 python manage.py migrate
+```
 
 Запустите Django shell:
+```bach
 python manage.py shell
+```
 
 Импортируйте функции:
+```bach
 from datacenter.scripts import fix_marks, remove_chastisements, create_commendation
+```
 
-from datacenter.models import Schoolkid
+Импортируйте все классы из файла models
+```bach
+from datacenter.models import название класс
+```
 
 
 
