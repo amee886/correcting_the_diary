@@ -32,26 +32,37 @@ from datacenter.scripts import fix_marks, remove_chastisements, create_commendat
 
 ## функции
 
-**fix_marks(schoolkid)**
+**get_schoolkid(name)**
+
+Проверяет на правильно ли записано имя и находит его полное имя
+
+```bach
+get_schoolkid("Фролов Иван")
+```
+
+Возможные результаты:
+
+"Ученик не найден"
+"Найдено несколько учеников"
+
+**fix_marks(name)**
 
 Исправляет все плохие оценки (2 и 3) на 5 у указанного ученика.
 
 Пример:
 ``` bach
-kid = Schoolkid.objects.get(full_name="Фролов Иван")
-fix_marks(kid)
+fix_marks("Фролов Иван")
 ```
 
 
-**remove_chastisements(schoolkid)**
+**remove_chastisements(name)**
 
 Удаляет все замечания ученика.
 
 Пример:
 
 ```bach
-kid = Schoolkid.objects.get(full_name="Фролов Иван")
-remove_chastisements(kid)
+remove_chastisements("Фролов Иван")
 ```
 
 
@@ -62,11 +73,9 @@ remove_chastisements(kid)
 
 Что делает функция:
 
-1.ищет ученика по имени
-2.проверяет количество найденных учеников
-3.выбирает случайную похвалу
-4.находит урок по предмету
-5.создаёт запись с датой урока
+1.выбирает случайную похвалу
+2.находит урок по предмету
+3.создаёт запись с датой урока
 
 Пример:
 
@@ -76,8 +85,6 @@ create_commendation("Фролов Иван", "Музыка")
 
 Возможные результаты:
 
-"Ученик не найден"
-"Найдено несколько учеников"
 "Урок не найден"
 
 
