@@ -29,12 +29,6 @@ python manage.py shell
 from datacenter.scripts import fix_marks, remove_chastisements, create_commendation
 ```
 
-Импортируйте все классы из файла models
-```bach
-from datacenter.models import название класс
-```
-
-
 
 ## функции
 
